@@ -1,17 +1,39 @@
 <template>
-  <todo-list-component :title="title" />
+  <todo-list-component :todos="todos" :complated="complated" :reset="reset" />
 </template>
 <script lang="ts">
 import { defineComponent } from "vue";
+import { useRouter } from "vue-router";
 
+import { useTodoStore } from "@/store";
 import { TodoListComponent } from "../../components";
+
+interface Props {
+  complated: boolean | null;
+}
 
 export default defineComponent({
   name: "TodoListContainer",
   components: { TodoListComponent },
-  setup() {
-    const title = "todoList";
-    return { title };
+  props: {
+    complated: {
+      type: Boolean,
+      required: false,
+      default: null,
+    },
+  },
+  setup(props: Props) {
+    const router = useRouter();
+    const { todos } = useTodoStore();
+
+    const reset = (): void => {
+      router.push({ path: "/todos" }).catch(() => {
+        // 強制リロード
+        router.go(0);
+      });
+    };
+
+    return { todos, props, reset };
   },
 });
 </script>
