@@ -8,15 +8,23 @@ export interface TodoState {
   todos: Todo[];
 }
 
-const todoMock: Todo = {
-  id: 1,
-  title: "TodoTest",
-  context: "test context",
-  complated: false,
-};
+const todoMocks: Todo[] = [
+  {
+    id: 1,
+    title: "TodoTest",
+    context: "test context",
+    complated: false,
+  },
+  {
+    id: 2,
+    title: "MockData",
+    context: "mock context",
+    complated: true,
+  },
+];
 
 export const initialState: TodoState = {
   isFetching: false,
   selectedId: null,
-  todos: [todoMock],
+  todos: todoMocks,
 };
