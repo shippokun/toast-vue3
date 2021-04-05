@@ -13,6 +13,9 @@
           <i class="fas fa-search" aria-hidden="true"></i>
         </span>
       </p>
+      <router-link :to="{ path: '/todos/new' }">
+        <button class="button is-link is-outlined">New Todo</button>
+      </router-link>
     </div>
     <p class="panel-tabs">
       <router-link to="/todos"
