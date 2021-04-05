@@ -14,7 +14,7 @@
         </span>
       </p>
       <router-link :to="{ path: '/todos/new' }">
-        <button class="button is-link is-outlined">New Todo</button>
+        <a class="button is-link is-outlined">New Todo</a>
       </router-link>
     </div>
     <p class="panel-tabs">
@@ -31,16 +31,19 @@
     <div v-for="todo in filterTodos" :key="todo.id">
       <router-link :to="{ path: `/todos/${todo.id}` }">
         <a
-          class="panel-block"
+          class="panel-block is-justify-content-space-between"
           :class="{
             'is-active': !todo.complated,
             'text-gray': todo.complated,
           }"
         >
-          <span class="panel-icon">
-            <i class="fas fa-book" aria-hidden="true"></i>
+          <span style="display: flex; align-items: center">
+            <span class="panel-icon">
+              <i class="fas fa-book" aria-hidden="true"></i>
+            </span>
+            {{ todo.title }}
           </span>
-          {{ todo.title }}
+          {{ formatDate(todo.updatedAt, "MM/dd hh:mm") }}
         </a>
       </router-link>
     </div>
@@ -57,6 +60,7 @@
 <script lang="ts">
 import { defineComponent, PropType, computed, ref } from "vue";
 import { Todo } from "@/models";
+import { formatDate } from "@/libs";
 
 interface Props {
   todos: Todo[];
@@ -110,6 +114,7 @@ export default defineComponent({
       search,
       filterTodos,
       resetEvent,
+      formatDate,
     };
   },
 });
