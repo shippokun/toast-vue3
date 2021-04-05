@@ -1,5 +1,5 @@
 <template>
-  <nav class="panel">
+  <nav class="panel is-link">
     <p class="panel-heading">TodoList</p>
     <div class="panel-block">
       <p class="control has-icons-left" style="margin-right: 0.5rem">
