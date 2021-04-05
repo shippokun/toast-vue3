@@ -2,7 +2,7 @@
   <nav class="panel">
     <p class="panel-heading">TodoList</p>
     <div class="panel-block">
-      <p class="control has-icons-left">
+      <p class="control has-icons-left" style="margin-right: 0.5rem">
         <input
           v-model="search"
           class="input"
@@ -30,7 +30,13 @@
     </p>
     <div v-for="todo in filterTodos" :key="todo.id">
       <router-link :to="{ path: `/todos/${todo.id}` }">
-        <a class="panel-block" :class="{ 'is-active': todo.complated }">
+        <a
+          class="panel-block"
+          :class="{
+            'is-active': !todo.complated,
+            'text-gray': todo.complated,
+          }"
+        >
           <span class="panel-icon">
             <i class="fas fa-book" aria-hidden="true"></i>
           </span>
@@ -108,3 +114,9 @@ export default defineComponent({
   },
 });
 </script>
+
+<style scoped>
+.text-gray {
+  color: gray;
+}
+</style>
