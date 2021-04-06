@@ -1,5 +1,5 @@
 <template>
-  <nav class="panel is-info">
+  <nav class="panel is-link">
     <p class="panel-heading">TodoDetail</p>
     <div class="px-3 pt-3">
       <div class="field">
@@ -21,7 +21,7 @@
       <div class="field is-grouped">
         <p class="control">
           <router-link :to="{ path: '/todos/edit' }">
-            <a class="button is-outlined is-info">Edit</a>
+            <a class="button is-outlined is-link">Edit</a>
           </router-link>
         </p>
         <p class="control">

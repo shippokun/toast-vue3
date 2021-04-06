@@ -1,5 +1,5 @@
 <template>
-  <form class="panel is-info" @submit.prevent="handleSubmit">
+  <form class="panel is-link" @submit.prevent="handleSubmit">
     <p class="panel-heading">TodoCreate</p>
     <div class="px-3 pt-3">
       <div class="field">
@@ -65,7 +65,7 @@
         <p class="control">
           <button
             type="submit"
-            class="button is-outlined is-info"
+            class="button is-outlined is-link"
             :disabled="!isValid"
           >
             Create
