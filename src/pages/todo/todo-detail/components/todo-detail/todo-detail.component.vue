@@ -16,11 +16,29 @@
           <p>{{ todo.context }}</p>
         </div>
       </div>
+      <div class="field">
+        <label class="label">Complated</label>
+        <div class="control">
+          <p>{{ todo.complated }}</p>
+        </div>
+      </div>
+      <div class="field">
+        <label class="label">UpdatedAt</label>
+        <div class="control">
+          <p>{{ formatDate(todo.updatedAt) }}</p>
+        </div>
+      </div>
+      <div class="field">
+        <label class="label">CreatedAt</label>
+        <div class="control">
+          <p>{{ formatDate(todo.createdAt) }}</p>
+        </div>
+      </div>
     </div>
     <div class="panel-block is-justify-content-flex-end p-3">
       <div class="field is-grouped">
         <p class="control">
-          <router-link :to="{ path: '/todos/edit' }">
+          <router-link :to="{ path: `/todos/${todo.id}/edit` }">
             <a class="button is-outlined is-link">Edit</a>
           </router-link>
         </p>
@@ -36,6 +54,7 @@
 <script lang="ts">
 import { defineComponent, PropType } from "vue";
 import { Todo } from "@/models";
+import { formatDate } from "@/libs";
 
 interface Props {
   todo: Todo;
@@ -49,8 +68,8 @@ export default defineComponent({
       required: true,
     },
   },
-  setup(props: Props) {
-    return { props };
+  setup() {
+    return { formatDate };
   },
 });
 </script>
