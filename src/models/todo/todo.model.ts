@@ -6,3 +6,9 @@ export interface Todo {
   updatedAt: Date;
   createdAt: Date;
 }
+
+export interface TodoCreateDto {
+  title: string;
+  context: string;
+  complated: boolean;
+}
