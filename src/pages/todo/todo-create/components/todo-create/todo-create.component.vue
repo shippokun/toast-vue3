@@ -28,7 +28,7 @@
         <p v-if="errors.title" class="help is-danger">{{ errors.title }}</p>
       </div>
       <div class="field">
-        <label class="label">Content</label>
+        <label class="label">Context</label>
         <div class="control has-icons-right">
           <textarea
             class="textarea"
