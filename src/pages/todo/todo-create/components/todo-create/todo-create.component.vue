@@ -4,20 +4,52 @@
     <div class="px-3 pt-3">
       <div class="field">
         <label class="label">Title</label>
-        <div class="control">
+        <div class="control has-icons-right">
           <input
             class="input"
+            :class="{
+              'is-success': errors.title === undefined,
+              'is-danger': errors.title,
+            }"
             type="text"
             placeholder="Title input"
             v-model="title"
           />
+          <span
+            v-if="errors.title === undefined"
+            class="icon is-small is-right"
+          >
+            <i class="fas fa-check"></i>
+          </span>
+          <span v-else class="icon is-small is-right">
+            <i class="fas fa-exclamation-triangle"></i>
+          </span>
         </div>
+        <p v-if="errors.title" class="help is-danger">{{ errors.title }}</p>
       </div>
       <div class="field">
         <label class="label">Content</label>
-        <div class="control">
-          <textarea class="textarea" placeholder="Textarea" v-model="context" />
+        <div class="control has-icons-right">
+          <textarea
+            class="textarea"
+            placeholder="Textarea"
+            v-model="context"
+            :class="{
+              'is-success': errors.context === undefined,
+              'is-danger': errors.context,
+            }"
+          />
+          <span
+            v-if="errors.context === undefined"
+            class="icon is-small is-right"
+          >
+            <i class="fas fa-check"></i>
+          </span>
+          <span v-else class="icon is-small is-right">
+            <i class="fas fa-exclamation-triangle"></i>
+          </span>
         </div>
+        <p v-if="errors.context" class="help is-danger">{{ errors.context }}</p>
       </div>
       <div class="field">
         <div class="control">
