@@ -1,7 +1,7 @@
 <template>
   <nav class="panel is-info">
     <p class="panel-heading">TodoCreate</p>
-    <div class="px-5 pt-5">
+    <div class="px-3 pt-3">
       <div class="field">
         <label class="label">Title</label>
         <div class="control">
@@ -23,7 +23,7 @@
         </div>
       </div>
     </div>
-    <div class="panel-block is-justify-content-flex-end p-5">
+    <div class="panel-block is-justify-content-flex-end p-3">
       <div class="field is-grouped">
         <p class="control">
           <button class="button is-outlined is-info" @click="resetEvent">
