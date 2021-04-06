@@ -4,35 +4,25 @@
     <div class="px-3 pt-3">
       <div class="field">
         <label class="label">Title</label>
-        <div class="control">
-          <p>
-            {{ todo.title }}
-          </p>
-        </div>
+        <p>
+          {{ todo.title }}
+        </p>
       </div>
       <div class="field">
         <label class="label">Context</label>
-        <div class="control">
-          <p>{{ todo.context }}</p>
-        </div>
+        <p>{{ todo.context }}</p>
       </div>
       <div class="field">
         <label class="label">Complated</label>
-        <div class="control">
-          <p>{{ todo.complated }}</p>
-        </div>
+        <p>{{ todo.complated }}</p>
       </div>
       <div class="field">
         <label class="label">UpdatedAt</label>
-        <div class="control">
-          <p>{{ formatDate(todo.updatedAt) }}</p>
-        </div>
+        <p>{{ formatDate(todo.updatedAt) }}</p>
       </div>
       <div class="field">
         <label class="label">CreatedAt</label>
-        <div class="control">
-          <p>{{ formatDate(todo.createdAt) }}</p>
-        </div>
+        <p>{{ formatDate(todo.createdAt) }}</p>
       </div>
     </div>
     <div class="panel-block is-justify-content-flex-end p-3">
