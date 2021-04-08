@@ -1,6 +1,6 @@
 <template>
   <form class="panel is-link" @submit.prevent="handleSubmit">
-    <p class="panel-heading">TodoCreate</p>
+    <p class="panel-heading">TodoEdit</p>
     <div class="px-3 pt-3">
       <div class="field">
         <label class="label">Title</label>
@@ -55,7 +55,7 @@
         <div class="control">
           <label class="checkbox">
             <input type="checkbox" v-model="completed" />
-            Already Completed?
+            Completed
           </label>
         </div>
       </div>
@@ -68,7 +68,7 @@
             class="button is-outlined is-link"
             :disabled="!isValid"
           >
-            Create
+            Update
           </button>
         </p>
         <p class="control">
@@ -81,20 +81,24 @@
   </form>
 </template>
 <script lang="ts">
-import { defineComponent, computed, PropType } from "vue";
-
-import { TodoCreateDto } from "@/models";
-import { useTodoCreatePresenter } from "./todo-create.presenter";
+import { defineComponent, PropType, computed } from "vue";
+import { Todo, TodoUpdateDto } from "@/models";
+import { useTodoEditPresenter } from "./todo-edit.presenter";
 
 interface Props {
-  onCreate: (todo: TodoCreateDto) => void;
+  todo: Todo;
+  onUpdate: (id: string, todo: TodoUpdateDto) => void;
 }
 
 export default defineComponent({
-  name: "TodoCreateComponent",
+  name: "TodoEditComponent",
   props: {
-    onCreate: {
-      type: Function as PropType<Props["onCreate"]>,
+    todo: {
+      type: Object as PropType<Props["todo"]>,
+      required: true,
+    },
+    onUpdate: {
+      type: Function as PropType<Props["onUpdate"]>,
       required: true,
     },
   },
@@ -107,8 +111,9 @@ export default defineComponent({
       setTitle,
       setContext,
       setCompleted,
-    } = useTodoCreatePresenter({
-      onCreate: props.onCreate,
+    } = useTodoEditPresenter({
+      todo: props.todo,
+      onUpdate: props.onUpdate,
     });
 
     const title = computed({

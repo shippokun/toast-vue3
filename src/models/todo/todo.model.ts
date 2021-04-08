@@ -1,8 +1,8 @@
 export interface Todo {
-  id: number;
+  id: string;
   title: string;
   context: string;
-  complated: boolean;
+  completed: boolean;
   updatedAt: Date;
   createdAt: Date;
 }
@@ -10,5 +10,12 @@ export interface Todo {
 export interface TodoCreateDto {
   title: string;
   context: string;
-  complated: boolean;
+  completed: boolean;
+}
+
+export interface TodoUpdateDto {
+  id: string;
+  title: string;
+  context: string;
+  completed: boolean;
 }

@@ -1,26 +1,29 @@
-import { computed, reactive } from "vue";
+import { computed, reactive, watchEffect } from "vue";
 
-import { TodoCreateDto } from "@/models";
+import { TodoUpdateDto, Todo } from "@/models";
 
-export interface FormValues {
+interface FormValues {
   title: string;
   context: string;
   completed: boolean;
 }
 
-const toDto = (values: FormValues) => {
-  const value: TodoCreateDto = {
+const toDto = (todo: Todo, values: FormValues) => {
+  const value: TodoUpdateDto = {
+    id: todo.id,
     title: values.title,
     context: values.context,
     completed: values.completed,
   };
+
   return value;
 };
 
-export const useTodoCreatePresenter = (arg: {
-  onCreate?: (todo: TodoCreateDto) => void;
+export const useTodoEditPresenter = (arg: {
+  todo: Todo;
+  onUpdate?: (id: string, todo: TodoUpdateDto) => void;
 }) => {
-  const { onCreate } = arg;
+  const { onUpdate } = arg;
   const values = reactive<FormValues>({
     title: "",
     context: "",
@@ -50,15 +53,23 @@ export const useTodoCreatePresenter = (arg: {
   };
 
   const handleSubmit = () => {
-    if (isValid.value) {
-      onCreate && onCreate(toDto(values));
+    const todo = arg.todo;
+    if (isValid.value && todo) {
+      onUpdate && onUpdate(todo.id, toDto(todo, values));
     }
   };
 
+  watchEffect(() => {
+    const todo = arg.todo;
+    values.title = todo?.title ?? "";
+    values.context = todo?.context ?? "";
+    values.completed = todo?.completed ?? false;
+  });
+
   return {
-    values,
     errors,
     isValid,
+    values,
     handleSubmit,
     setTitle,
     setContext,

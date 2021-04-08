@@ -1,5 +1,5 @@
 <template>
-  <todo-list-component :todos="todos" :complated="complated" :reset="reset" />
+  <todo-list-component :todos="todos" :completed="completed" :reset="reset" />
 </template>
 <script lang="ts">
 import { defineComponent } from "vue";
@@ -9,14 +9,14 @@ import { useTodoStore } from "@/store";
 import { TodoListComponent } from "../../components";
 
 interface Props {
-  complated: boolean | null;
+  completed: boolean | null;
 }
 
 export default defineComponent({
   name: "TodoListContainer",
   components: { TodoListComponent },
   props: {
-    complated: {
+    completed: {
       type: Boolean,
       required: false,
       default: null,

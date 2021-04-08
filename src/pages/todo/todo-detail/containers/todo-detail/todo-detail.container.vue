@@ -9,14 +9,14 @@ import { useTodoStore } from "@/store";
 import { TodoDetailComponent } from "../../components";
 
 interface Props {
-  todoId: number;
+  todoId: string;
 }
 
 export default defineComponent({
   name: "TodoDetailContainer",
   props: {
     todoId: {
-      type: Number,
+      type: String,
       required: true,
     },
   },

@@ -21,11 +21,11 @@
       <router-link to="/todos"
         ><a :class="{ 'is-active': isAll }">All</a>
       </router-link>
-      <router-link :to="{ path: '/todos', query: { complated: true } }"
-        ><a :class="{ 'is-active': isComplated }">Completed</a>
+      <router-link :to="{ path: '/todos', query: { completed: true } }"
+        ><a :class="{ 'is-active': isCompleted }">Completed</a>
       </router-link>
-      <router-link :to="{ path: '/todos', query: { complated: false } }"
-        ><a :class="{ 'is-active': isNoncomplated }">Noncompleted</a>
+      <router-link :to="{ path: '/todos', query: { completed: false } }"
+        ><a :class="{ 'is-active': isNoncompleted }">Noncompleted</a>
       </router-link>
     </p>
     <div v-for="todo in filterTodos" :key="todo.id">
@@ -33,8 +33,8 @@
         <a
           class="panel-block is-justify-content-space-between"
           :class="{
-            'is-active': !todo.complated,
-            'text-gray': todo.complated,
+            'is-active': !todo.completed,
+            'text-gray': todo.completed,
           }"
         >
           <span style="display: flex; align-items: center">
@@ -64,7 +64,7 @@ import { formatDate } from "@/libs";
 
 interface Props {
   todos: Todo[];
-  complated: boolean | null;
+  completed: boolean | null;
   reset: () => void;
 }
 
@@ -75,7 +75,7 @@ export default defineComponent({
       type: Array as PropType<Todo[]>,
       required: true,
     },
-    complated: {
+    completed: {
       type: Boolean,
       required: false,
       default: null,
@@ -87,9 +87,9 @@ export default defineComponent({
   },
   setup(props: Props) {
     const search = ref("");
-    const isComplated = computed<boolean>(() => props.complated === true);
-    const isNoncomplated = computed<boolean>(() => props.complated === false);
-    const isAll = computed<boolean>(() => props.complated == null);
+    const isCompleted = computed<boolean>(() => props.completed === true);
+    const isNoncompleted = computed<boolean>(() => props.completed === false);
+    const isAll = computed<boolean>(() => props.completed == null);
 
     const filterTodos = computed(() => {
       // 文字列検索
@@ -97,9 +97,9 @@ export default defineComponent({
         todo.title.includes(search.value)
       );
       // 達成検索
-      return props.complated === null
+      return props.completed === null
         ? result
-        : result.filter((todo) => props.complated === todo.complated);
+        : result.filter((todo) => props.completed === todo.completed);
     });
 
     const resetEvent = () => {
@@ -108,8 +108,8 @@ export default defineComponent({
     };
 
     return {
-      isComplated,
-      isNoncomplated,
+      isCompleted,
+      isNoncompleted,
       isAll,
       search,
       filterTodos,

@@ -13,8 +13,8 @@
         <p>{{ todo.context }}</p>
       </div>
       <div class="field">
-        <label class="label">Complated</label>
-        <p>{{ todo.complated }}</p>
+        <label class="label">Completed</label>
+        <p>{{ todo.completed }}</p>
       </div>
       <div class="field">
         <label class="label">UpdatedAt</label>

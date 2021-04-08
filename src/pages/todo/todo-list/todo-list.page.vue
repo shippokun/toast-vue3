@@ -1,5 +1,5 @@
 <template>
-  <todo-list-container :complated="complated" />
+  <todo-list-container :completed="completed" />
 </template>
 
 <script lang="ts">
@@ -8,9 +8,9 @@ import { LocationQuery, useRoute } from "vue-router";
 
 import { TodoListContainer } from "./containers";
 
-const toComplated = (query: LocationQuery): boolean | null => {
+const toCompleted = (query: LocationQuery): boolean | null => {
   let result: boolean | null;
-  switch (query["complated"]) {
+  switch (query["completed"]) {
     case "true":
       result = true;
       break;
@@ -28,16 +28,16 @@ export default defineComponent({
   components: { TodoListContainer },
   setup() {
     const route = useRoute();
-    const complated = ref(toComplated(route.query));
+    const completed = ref(toCompleted(route.query));
 
     watch(
       () => route.query,
       (query) => {
-        complated.value = toComplated(query);
+        completed.value = toCompleted(query);
       }
     );
 
-    return { complated };
+    return { completed };
   },
 });
 </script>
