@@ -86,7 +86,7 @@ import { Todo, TodoUpdateDto } from "@/models";
 import { useTodoEditPresenter } from "./todo-edit.presenter";
 
 interface Props {
-  todo: Todo;
+  todo: Todo | null;
   onUpdate: (id: string, todo: TodoUpdateDto) => void;
 }
 
@@ -95,7 +95,7 @@ export default defineComponent({
   props: {
     todo: {
       type: Object as PropType<Props["todo"]>,
-      required: true,
+      default: null,
     },
     onUpdate: {
       type: Function as PropType<Props["onUpdate"]>,

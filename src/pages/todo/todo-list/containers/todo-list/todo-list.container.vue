@@ -24,7 +24,9 @@ export default defineComponent({
   },
   setup(props: Props) {
     const router = useRouter();
-    const { todos } = useTodoStore();
+    const { todos, fetchAll } = useTodoStore();
+
+    fetchAll();
 
     const reset = (): void => {
       router.push({ path: "/todos" }).catch(() => {

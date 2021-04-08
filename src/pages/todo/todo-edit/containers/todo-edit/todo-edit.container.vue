@@ -2,10 +2,11 @@
   <todo-edit-component :todo="todo" :onUpdate="onUpdate" />
 </template>
 <script lang="ts">
-import { defineComponent, computed } from "vue";
+import { defineComponent } from "vue";
 import { useTodoStore } from "@/store";
 import { TodoUpdateDto } from "@/models";
 import { useToast } from "vue-toastification";
+import { useRouter } from "vue-router";
 
 import { TodoEditComponent } from "../../components";
 
@@ -23,17 +24,21 @@ export default defineComponent({
     },
   },
   setup(props: Props) {
+    const router = useRouter();
     const toast = useToast();
-    const { todos } = useTodoStore();
+    const { todo, fetch, update } = useTodoStore();
 
-    // getterから取得する
-    const todo = computed(() =>
-      todos.value.find((todo) => todo.id === props.id)
-    );
+    fetch({ id: props.id });
 
-    const onUpdate = (id: string, todo: TodoUpdateDto) => {
-      const text = Object.entries(todo).join(" ");
-      toast.success(`${id} ${text}`);
+    const onUpdate = async (id: string, todo: TodoUpdateDto) => {
+      await update({ id, todo })
+        .then((res) => {
+          toast.success(`update ${res.todo.title}`);
+          router.push({ path: `/todos/${res.todo.id}` });
+        })
+        .catch((err) => {
+          toast.error(err);
+        });
     };
 
     return { todo, onUpdate };

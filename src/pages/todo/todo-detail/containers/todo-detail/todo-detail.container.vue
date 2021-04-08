@@ -2,7 +2,7 @@
   <todo-detail-component :todo="todo" />
 </template>
 <script lang="ts">
-import { defineComponent, computed } from "vue";
+import { defineComponent } from "vue";
 
 import { useTodoStore } from "@/store";
 
@@ -22,14 +22,11 @@ export default defineComponent({
   },
   components: { TodoDetailComponent },
   setup(props: Props) {
-    const { todos } = useTodoStore();
+    const { todo, fetch, isFetching, todos } = useTodoStore();
 
-    // getterから取得する
-    const todo = computed(() =>
-      todos.value.find((todo) => todo.id === props.todoId)
-    );
+    fetch({ id: props.todoId });
 
-    return { todo };
+    return { todo, isFetching, todos };
   },
 });
 </script>

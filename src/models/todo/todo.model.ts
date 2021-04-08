@@ -14,7 +14,6 @@ export interface TodoCreateDto {
 }
 
 export interface TodoUpdateDto {
-  id: string;
   title: string;
   context: string;
   completed: boolean;

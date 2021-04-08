@@ -63,7 +63,7 @@ import { Todo } from "@/models";
 import { formatDate } from "@/libs";
 
 interface Props {
-  todos: Todo[];
+  todos: Todo[] | null;
   completed: boolean | null;
   reset: () => void;
 }
@@ -73,7 +73,7 @@ export default defineComponent({
   props: {
     todos: {
       type: Array as PropType<Todo[]>,
-      required: true,
+      default: null,
     },
     completed: {
       type: Boolean,
@@ -93,13 +93,13 @@ export default defineComponent({
 
     const filterTodos = computed(() => {
       // 文字列検索
-      const result = props.todos.filter((todo) =>
+      const result = props.todos?.filter((todo) =>
         todo.title.includes(search.value)
       );
       // 達成検索
       return props.completed === null
         ? result
-        : result.filter((todo) => props.completed === todo.completed);
+        : result?.filter((todo) => props.completed === todo.completed);
     });
 
     const resetEvent = () => {

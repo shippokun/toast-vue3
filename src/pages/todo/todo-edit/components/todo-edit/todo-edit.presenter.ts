@@ -8,9 +8,8 @@ interface FormValues {
   completed: boolean;
 }
 
-const toDto = (todo: Todo, values: FormValues) => {
+const toDto = (values: FormValues) => {
   const value: TodoUpdateDto = {
-    id: todo.id,
     title: values.title,
     context: values.context,
     completed: values.completed,
@@ -20,7 +19,7 @@ const toDto = (todo: Todo, values: FormValues) => {
 };
 
 export const useTodoEditPresenter = (arg: {
-  todo: Todo;
+  todo: Todo | null;
   onUpdate?: (id: string, todo: TodoUpdateDto) => void;
 }) => {
   const { onUpdate } = arg;
@@ -55,7 +54,7 @@ export const useTodoEditPresenter = (arg: {
   const handleSubmit = () => {
     const todo = arg.todo;
     if (isValid.value && todo) {
-      onUpdate && onUpdate(todo.id, toDto(todo, values));
+      onUpdate && onUpdate(todo.id, toDto(values));
     }
   };
 

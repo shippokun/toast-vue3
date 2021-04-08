@@ -11,7 +11,7 @@ export const selectedId = (state: TodoState): TodoState["selectedId"] =>
 export const todos = (state: TodoState): TodoState["todos"] => state.todos;
 export const todo = (state: TodoState): Todo | null => {
   return state.selectedId
-    ? state.todos.find((todo) => todo.id === state.selectedId) ?? null
+    ? state.todos.find((todo) => todo.id == state.selectedId) ?? null
     : null;
 };
 

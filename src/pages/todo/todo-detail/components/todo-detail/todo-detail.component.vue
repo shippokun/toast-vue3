@@ -1,5 +1,5 @@
 <template>
-  <nav class="panel is-link">
+  <nav v-if="todo" class="panel is-link">
     <p class="panel-heading">TodoDetail</p>
     <div class="px-3 pt-3">
       <div class="field">
@@ -47,7 +47,7 @@ import { Todo } from "@/models";
 import { formatDate } from "@/libs";
 
 interface Props {
-  todo: Todo;
+  todo: Todo | null;
 }
 
 export default defineComponent({
@@ -55,7 +55,7 @@ export default defineComponent({
   props: {
     todo: {
       type: Object as PropType<Props["todo"]>,
-      required: true,
+      default: null,
     },
   },
   setup() {
