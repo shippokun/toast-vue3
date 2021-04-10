@@ -28,6 +28,11 @@
     <div class="panel-block is-justify-content-flex-end p-3">
       <div class="field is-grouped">
         <p class="control">
+          <button class="button is-outlined is-danger" @click="onRemove()">
+            Delete
+          </button>
+        </p>
+        <p class="control">
           <router-link :to="{ path: `/todos/${todo.id}/edit` }">
             <a class="button is-outlined is-link">Edit</a>
           </router-link>
@@ -48,6 +53,7 @@ import { formatDate } from "@/libs";
 
 interface Props {
   todo: Todo | null;
+  onRemove: () => void;
 }
 
 export default defineComponent({
@@ -56,6 +62,10 @@ export default defineComponent({
     todo: {
       type: Object as PropType<Props["todo"]>,
       default: null,
+    },
+    onRemove: {
+      type: Function as PropType<Props["onRemove"]>,
+      required: true,
     },
   },
   setup() {

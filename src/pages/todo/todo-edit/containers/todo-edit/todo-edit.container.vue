@@ -33,7 +33,7 @@ export default defineComponent({
     const onUpdate = async (id: string, todo: TodoUpdateDto) => {
       await update({ id, todo })
         .then((res) => {
-          toast.success(`update ${res.todo.title}`);
+          toast.success(`Updated ${res.todo.title}`);
           router.push({ path: `/todos/${res.todo.id}` });
         })
         .catch((err) => {
