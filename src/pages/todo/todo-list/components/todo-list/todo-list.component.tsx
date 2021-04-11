@@ -1,6 +1,7 @@
 import { defineComponent, PropType, computed, ref } from "vue";
 import { Todo } from "@/models";
 import { formatDate } from "@/libs";
+import { RouterLink } from "vue-router";
 
 interface Props {
   todos: Todo[] | null;
@@ -65,23 +66,23 @@ export const TodoListComponent = defineComponent({
               <i class="fas fa-search" aria-hidden="true"></i>
             </span>
           </p>
-          <router-link to={{ path: "/todos/new" }}>
+          <RouterLink to={{ path: "/todos/new" }}>
             <a class="button is-link is-outlined">New Todo</a>
-          </router-link>
+          </RouterLink>
         </div>
         <p class="panel-tabs">
-          <router-link to={{ path: "/todos" }}>
+          <RouterLink to={{ path: "/todos" }}>
             <a class={isAll.value ? "is-active" : ""}>All</a>
-          </router-link>
-          <router-link to={{ path: "/todos", query: { completed: true } }}>
+          </RouterLink>
+          <RouterLink to={{ path: "/todos", query: { completed: "true" } }}>
             <a class={isCompleted.value ? "is-active" : ""}>Completed</a>
-          </router-link>
-          <router-link to={{ path: "/todos", query: { completed: false } }}>
+          </RouterLink>
+          <RouterLink to={{ path: "/todos", query: { completed: "false" } }}>
             <a class={isNoncompleted.value ? "is-active" : ""}>Noncompleted</a>
-          </router-link>
+          </RouterLink>
         </p>
         {filterTodos.value?.map((todo) => (
-          <router-link to={{ path: `/todos/${todo.id}` }}>
+          <RouterLink to={{ path: `/todos/${todo.id}` }}>
             <a class={"panel-block is-justify-content-space-between"}>
               <span style="display: flex; align-items: center">
                 <span class="panel-icon">
@@ -91,7 +92,7 @@ export const TodoListComponent = defineComponent({
               </span>
               {formatDate(todo.updatedAt, "MM/dd hh:mm")}
             </a>
-          </router-link>
+          </RouterLink>
         ))}
         <div class="panel-block">
           <button
