@@ -77,7 +77,6 @@ export default defineComponent({
     },
     completed: {
       type: Boolean,
-      required: false,
       default: null,
     },
     reset: {
