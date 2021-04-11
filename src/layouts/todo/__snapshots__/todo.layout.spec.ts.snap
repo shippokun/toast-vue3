@@ -1,0 +1,12 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`todo.layout.vue render 1`] = `
+<div class="container is-max-desktop">
+  <section class="hero">
+    <div class="hero-body">
+      <h1 class="title has-text-centered">Todo-Vue</h1>
+    </div>
+  </section>
+  <router-view></router-view>
+</div>
+`;
