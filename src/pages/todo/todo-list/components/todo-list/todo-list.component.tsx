@@ -16,11 +16,11 @@ export const TodoListComponent = defineComponent({
   name: "TodoListComponent",
   props: {
     todos: {
-      type: Array as PropType<Todo[]>,
+      type: Array as PropType<Props["todos"]>,
       default: null,
     },
     completed: {
-      type: Boolean,
+      type: Boolean as PropType<Props["completed"]>,
       default: null,
     },
     reset: {
