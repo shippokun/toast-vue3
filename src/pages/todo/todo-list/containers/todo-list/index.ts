@@ -1,1 +1,1 @@
-export { default as TodoListContainer } from "./todo-list.container.vue";
+export * from "./todo-list.container";

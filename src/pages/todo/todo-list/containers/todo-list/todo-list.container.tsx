@@ -1,8 +1,4 @@
-<template>
-  <todo-list-component :todos="todos" :completed="completed" :reset="reset" />
-</template>
-<script lang="ts">
-import { defineComponent } from "vue";
+import { defineComponent, PropType } from "vue";
 import { useRouter } from "vue-router";
 
 import { useTodoStore } from "@/store";
@@ -12,13 +8,12 @@ interface Props {
   completed: boolean | null;
 }
 
-export default defineComponent({
+export const TodoListContainer = defineComponent({
   name: "TodoListContainer",
   components: { TodoListComponent },
   props: {
     completed: {
-      type: Boolean,
-      required: false,
+      type: Boolean as PropType<Props["completed"]>,
       default: null,
     },
   },
@@ -35,7 +30,12 @@ export default defineComponent({
       });
     };
 
-    return { todos, props, reset };
+    return () => (
+      <TodoListComponent
+        todos={todos.value}
+        completed={props.completed}
+        reset={reset}
+      />
+    );
   },
 });
-</script>
