@@ -1,9 +1,9 @@
 import { mount } from "@vue/test-utils";
 import { createTodosMock } from "@/models/testing";
-import { TodoListComponent } from "./";
+import { TodoListComponent } from "./todo-list.component";
 import { router } from "@/router";
 
-describe("todo-list.component.vue", () => {
+describe("todo-list.component.tsx", () => {
   describe("renders", () => {
     it("default render", () => {
       const wrapper = mount(TodoListComponent, {

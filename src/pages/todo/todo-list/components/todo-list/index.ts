@@ -1,1 +1,1 @@
-export { default as TodoListComponent } from "./todo-list.component.vue";
+export * from "./todo-list.component";
