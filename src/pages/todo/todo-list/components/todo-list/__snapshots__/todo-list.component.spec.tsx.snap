@@ -4,12 +4,10 @@ exports[`todo-list.component.tsx renders default render 1`] = `
 <nav class="panel is-link">
   <p class="panel-heading">TodoList</p>
   <div class="panel-block">
-    <p class="control has-icons-left" style="margin-right: 0.5rem;"><input class="input" type="text" placeholder="Search"><span class="icon is-left"><i class="fas fa-search" aria-hidden="true"></i></span></p><a href="/todos/new" class=""><a class="button is-link is-outlined">New Todo</a></a>
+    <p class="control has-icons-left" style="margin-right: 0.5rem;"><input dompropsvalue="" directives="[object Object]" class="input" type="text" placeholder="Search"><span class="icon is-left"><i class="fas fa-search" aria-hidden="true"></i></span></p><a href="/todos/new" class=""><a class="button is-link is-outlined">New Todo</a></a>
   </div>
   <p class="panel-tabs"><a href="/todos" class=""><a class="is-active">All</a></a><a href="/todos?completed=true" class=""><a class="">Completed</a></a><a href="/todos?completed=false" class=""><a class="">Noncompleted</a></a></p>
-  <div>
-    <!---->
-  </div>
+  <!---->
   <div class="panel-block"><button class="button is-link is-outlined is-fullwidth">Reset all filters</button></div>
 </nav>
 `;
@@ -18,10 +16,9 @@ exports[`todo-list.component.tsx renders props todos 1`] = `
 <nav class="panel is-link">
   <p class="panel-heading">TodoList</p>
   <div class="panel-block">
-    <p class="control has-icons-left" style="margin-right: 0.5rem;"><input class="input" type="text" placeholder="Search"><span class="icon is-left"><i class="fas fa-search" aria-hidden="true"></i></span></p><a href="/todos/new" class=""><a class="button is-link is-outlined">New Todo</a></a>
+    <p class="control has-icons-left" style="margin-right: 0.5rem;"><input dompropsvalue="" directives="[object Object]" class="input" type="text" placeholder="Search"><span class="icon is-left"><i class="fas fa-search" aria-hidden="true"></i></span></p><a href="/todos/new" class=""><a class="button is-link is-outlined">New Todo</a></a>
   </div>
-  <p class="panel-tabs"><a href="/todos" class=""><a class="is-active">All</a></a><a href="/todos?completed=true" class=""><a class="">Completed</a></a><a href="/todos?completed=false" class=""><a class="">Noncompleted</a></a></p>
-  <div><a href="/todos/1" class=""><a class="panel-block is-justify-content-space-between"><span style="display: flex; align-items: center;"><span class="panel-icon"><i class="fas fa-book" aria-hidden="true"></i></span>title1</span>01/02 07:17</a></a><a href="/todos/2" class=""><a class="panel-block is-justify-content-space-between"><span style="display: flex; align-items: center;"><span class="panel-icon"><i class="fas fa-book" aria-hidden="true"></i></span>title2</span>01/02 07:17</a></a><a href="/todos/3" class=""><a class="panel-block is-justify-content-space-between"><span style="display: flex; align-items: center;"><span class="panel-icon"><i class="fas fa-book" aria-hidden="true"></i></span>title3</span>01/02 07:17</a></a></div>
+  <p class="panel-tabs"><a href="/todos" class=""><a class="is-active">All</a></a><a href="/todos?completed=true" class=""><a class="">Completed</a></a><a href="/todos?completed=false" class=""><a class="">Noncompleted</a></a></p><a href="/todos/1" class=""><a class="panel-block is-justify-content-space-between"><span style="display: flex; align-items: center;"><span class="panel-icon"><i class="fas fa-book" aria-hidden="true"></i></span>title1</span>01/02 07:17</a></a><a href="/todos/2" class=""><a class="panel-block is-justify-content-space-between"><span style="display: flex; align-items: center;"><span class="panel-icon"><i class="fas fa-book" aria-hidden="true"></i></span>title2</span>01/02 07:17</a></a><a href="/todos/3" class=""><a class="panel-block is-justify-content-space-between"><span style="display: flex; align-items: center;"><span class="panel-icon"><i class="fas fa-book" aria-hidden="true"></i></span>title3</span>01/02 07:17</a></a>
   <div class="panel-block"><button class="button is-link is-outlined is-fullwidth">Reset all filters</button></div>
 </nav>
 `;
