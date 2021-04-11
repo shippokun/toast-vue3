@@ -1,8 +1,3 @@
-<template>
-  <todo-list-container :completed="completed" />
-</template>
-
-<script lang="ts">
 import { defineComponent, ref, watch } from "vue";
 import { LocationQuery, useRoute } from "vue-router";
 
@@ -23,7 +18,7 @@ const toCompleted = (query: LocationQuery): boolean | null => {
   return result;
 };
 
-export default defineComponent({
+export const TodoListPage = defineComponent({
   name: "TodoListPage",
   components: { TodoListContainer },
   setup() {
@@ -37,7 +32,6 @@ export default defineComponent({
       }
     );
 
-    return { completed };
+    return () => <TodoListContainer completed={completed.value} />;
   },
 });
-</script>

@@ -1,1 +1,1 @@
-export { default as TodoListPage } from "./todo-list.page.vue";
+export * from "./todo-list.page";
