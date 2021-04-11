@@ -80,21 +80,19 @@ export const TodoListComponent = defineComponent({
             <a class={isNoncompleted.value ? "is-active" : ""}>Noncompleted</a>
           </router-link>
         </p>
-        <div>
-          {filterTodos.value?.map((todo) => (
-            <router-link to={{ path: `/todos/${todo.id}` }}>
-              <a class={"panel-block is-justify-content-space-between"}>
-                <span style="display: flex; align-items: center">
-                  <span class="panel-icon">
-                    <i class="fas fa-book" aria-hidden="true"></i>
-                  </span>
-                  {todo.title}
+        {filterTodos.value?.map((todo) => (
+          <router-link to={{ path: `/todos/${todo.id}` }}>
+            <a class={"panel-block is-justify-content-space-between"}>
+              <span style="display: flex; align-items: center">
+                <span class="panel-icon">
+                  <i class="fas fa-book" aria-hidden="true"></i>
                 </span>
-                {formatDate(todo.updatedAt, "MM/dd hh:mm")}
-              </a>
-            </router-link>
-          ))}
-        </div>
+                {todo.title}
+              </span>
+              {formatDate(todo.updatedAt, "MM/dd hh:mm")}
+            </a>
+          </router-link>
+        ))}
         <div class="panel-block">
           <button
             class="button is-link is-outlined is-fullwidth"
