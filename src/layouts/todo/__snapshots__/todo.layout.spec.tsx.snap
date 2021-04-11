@@ -7,6 +7,6 @@ exports[`todo.layout.tsx render 1`] = `
       <h1 class="title has-text-centered">Todo-Vue</h1>
     </div>
   </section>
-  <router-view></router-view>
+  <router-view-stub></router-view-stub>
 </div>
 `;
