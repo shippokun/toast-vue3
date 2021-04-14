@@ -1,7 +1,3 @@
-<template>
-  <todo-create-component :onCreate="onCreate" />
-</template>
-<script lang="ts">
 import { defineComponent } from "vue";
 
 import { TodoCreateDto } from "@/models";
@@ -10,7 +6,7 @@ import { useToast } from "vue-toastification";
 import { useTodoStore } from "@/store";
 import { useRouter } from "vue-router";
 
-export default defineComponent({
+export const TodoCreateContainer = defineComponent({
   name: "TodoCreateContainer",
   components: {
     TodoCreateComponent,
@@ -31,7 +27,6 @@ export default defineComponent({
         });
     };
 
-    return { onCreate };
+    return () => <todo-create-component onCreate={onCreate} />;
   },
 });
-</script>

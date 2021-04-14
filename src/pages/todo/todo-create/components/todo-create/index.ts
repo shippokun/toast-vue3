@@ -1,1 +1,1 @@
-export { default as TodoCreateComponent } from "./todo-create.component.vue";
+export * from "./todo-create.component";

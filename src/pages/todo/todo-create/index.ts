@@ -1,1 +1,1 @@
-export { default as TodoCreatePage } from "./todo-create.page.vue";
+export * from "./todo-create.page";

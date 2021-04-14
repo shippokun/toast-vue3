@@ -1,14 +1,11 @@
-<template>
-  <todo-create-container />
-</template>
-
-<script lang="ts">
 import { defineComponent } from "vue";
 
 import { TodoCreateContainer } from "./containers";
 
-export default defineComponent({
+export const TodoCreatePage = defineComponent({
   name: "TodoCreatePage",
   components: { TodoCreateContainer },
+  setup() {
+    return () => <todo-create-container />;
+  },
 });
-</script>
