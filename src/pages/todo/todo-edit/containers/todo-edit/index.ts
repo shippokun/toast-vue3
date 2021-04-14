@@ -1,1 +1,1 @@
-export { default as TodoEditContainer } from "./todo-edit.container.vue";
+export * from "./todo-edit.container";

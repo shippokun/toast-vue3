@@ -1,7 +1,3 @@
-<template>
-  <todo-edit-component :todo="todo" :onUpdate="onUpdate" />
-</template>
-<script lang="ts">
 import { defineComponent } from "vue";
 import { useTodoStore } from "@/store";
 import { TodoUpdateDto } from "@/models";
@@ -14,7 +10,7 @@ interface Props {
   id: string;
 }
 
-export default defineComponent({
+export const TodoEditContainer = defineComponent({
   name: "TodoEditContainer",
   components: { TodoEditComponent },
   props: {
@@ -41,7 +37,6 @@ export default defineComponent({
         });
     };
 
-    return { todo, onUpdate };
+    return () => <todo-edit-component todo={todo.value} onUpdate={onUpdate} />;
   },
 });
-</script>

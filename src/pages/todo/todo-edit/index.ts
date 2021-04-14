@@ -1,1 +1,1 @@
-export { default as TodoEditPage } from "./todo-edit.page.vue";
+export * from "./todo-edit.page";
