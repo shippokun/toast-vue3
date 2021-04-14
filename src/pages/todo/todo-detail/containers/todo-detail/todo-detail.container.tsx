@@ -1,7 +1,3 @@
-<template>
-  <todo-detail-component :todo="todo" :onRemove="onRemove" />
-</template>
-<script lang="ts">
 import { defineComponent } from "vue";
 import { useToast } from "vue-toastification";
 import { useRouter } from "vue-router";
@@ -14,7 +10,7 @@ interface Props {
   todoId: string;
 }
 
-export default defineComponent({
+export const TodoDetailContainer = defineComponent({
   name: "TodoDetailContainer",
   props: {
     todoId: {
@@ -41,7 +37,8 @@ export default defineComponent({
         });
     };
 
-    return { todo, isFetching, todos, onRemove };
+    return () => (
+      <todo-detail-component todo={todo.value} onRemove={onRemove} />
+    );
   },
 });
-</script>
