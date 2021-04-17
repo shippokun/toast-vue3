@@ -10,6 +10,6 @@ export const TodoEditPage = defineComponent({
     const route = useRoute();
     const id = ref(String(route.params["id"]));
 
-    return () => <todo-edit-container id={id.value} />;
+    return () => <TodoEditContainer id={id.value} />;
   },
 });

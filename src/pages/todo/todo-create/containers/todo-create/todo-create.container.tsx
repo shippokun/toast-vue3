@@ -27,6 +27,6 @@ export const TodoCreateContainer = defineComponent({
         });
     };
 
-    return () => <todo-create-component onCreate={onCreate} />;
+    return () => <TodoCreateComponent onCreate={onCreate} />;
   },
 });

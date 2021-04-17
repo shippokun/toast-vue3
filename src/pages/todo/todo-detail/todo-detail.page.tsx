@@ -10,6 +10,6 @@ export const TodoDetailPage = defineComponent({
     const route = useRoute();
     const todoId = ref(String(route.params["id"]));
 
-    return () => <todo-detail-container todoId={todoId.value} />;
+    return () => <TodoDetailContainer todoId={todoId.value} />;
   },
 });

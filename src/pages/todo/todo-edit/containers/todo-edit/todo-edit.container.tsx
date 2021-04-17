@@ -37,6 +37,6 @@ export const TodoEditContainer = defineComponent({
         });
     };
 
-    return () => <todo-edit-component todo={todo.value} onUpdate={onUpdate} />;
+    return () => <TodoEditComponent todo={todo.value} onUpdate={onUpdate} />;
   },
 });

@@ -6,6 +6,6 @@ export const TodoCreatePage = defineComponent({
   name: "TodoCreatePage",
   components: { TodoCreateContainer },
   setup() {
-    return () => <todo-create-container />;
+    return () => <TodoCreateContainer />;
   },
 });

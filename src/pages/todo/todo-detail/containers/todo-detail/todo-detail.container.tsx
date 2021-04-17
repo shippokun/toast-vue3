@@ -37,8 +37,6 @@ export const TodoDetailContainer = defineComponent({
         });
     };
 
-    return () => (
-      <todo-detail-component todo={todo.value} onRemove={onRemove} />
-    );
+    return () => <TodoDetailComponent todo={todo.value} onRemove={onRemove} />;
   },
 });
