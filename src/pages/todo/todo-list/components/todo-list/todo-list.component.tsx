@@ -2,6 +2,7 @@ import { defineComponent, PropType, computed, ref } from "vue";
 import { Todo } from "@/models";
 import { formatDate } from "@/libs";
 import { RouterLink } from "vue-router";
+import { ModalComponent } from "@/components";
 
 interface Props {
   todos: Todo[] | null;
@@ -29,6 +30,7 @@ export const TodoListComponent = defineComponent({
       required: true,
     },
   },
+  components: { ModalComponent },
   setup(props: Props) {
     const search = ref("");
     const isCompleted = computed<boolean>(() => props.completed === true);
@@ -54,6 +56,9 @@ export const TodoListComponent = defineComponent({
     return () => (
       <nav class="panel is-link">
         <p class="panel-heading">TodoList</p>
+        <ModalComponent isShow={true}>
+          <h2 class="is-size-2 has-text-centered">Modal Component</h2>
+        </ModalComponent>
         <div class="panel-block">
           <p class="control has-icons-left" style="margin-right: 0.5rem">
             <input
