@@ -1,0 +1,26 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`modal isShowがfalseのとき、なにもrenderしないこと 1`] = `
+<div>
+  <div data-v-app="">
+    <!--teleport start-->
+    <!--teleport end-->
+  </div>
+</div>
+<!---->
+`;
+
+exports[`modal isShowがtrueのとき、renderすること 1`] = `
+<div>
+  <div data-v-app="">
+    <!--teleport start-->
+    <!--teleport end-->
+  </div>
+</div>
+<div class="modal is-active">
+  <div class="modal-background"></div>
+  <div class="modal-content">
+    <div class="box">test</div>
+  </div><button class="modal-close is-large" aria-label="close" id="closeButton"></button>
+</div>
+`;
