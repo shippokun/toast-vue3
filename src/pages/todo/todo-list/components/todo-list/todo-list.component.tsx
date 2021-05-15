@@ -56,9 +56,6 @@ export const TodoListComponent = defineComponent({
     return () => (
       <nav class="panel is-link">
         <p class="panel-heading">TodoList</p>
-        <ModalComponent isShow={true}>
-          <h2 class="is-size-2 has-text-centered">Modal Component</h2>
-        </ModalComponent>
         <div class="panel-block">
           <p class="control has-icons-left" style="margin-right: 0.5rem">
             <input

@@ -1,17 +1,17 @@
-import { defineComponent, Teleport, PropType, renderSlot } from "vue";
+import { defineComponent, Teleport, PropType, renderSlot, Ref, ref } from "vue";
 
 import { useModal } from "./modal.presenter";
 
 type Props = {
-  isShow?: boolean;
+  isShow?: Ref<boolean>;
 };
 
 export const ModalComponent = defineComponent({
   name: "ModalComponent",
   props: {
     isShow: {
-      type: Boolean as PropType<Props["isShow"]>,
-      default: false,
+      type: Object as PropType<Props["isShow"]>,
+      default: ref(false),
     },
   },
   setup(props: Props, { slots }) {
@@ -24,7 +24,7 @@ export const ModalComponent = defineComponent({
         {show.value && (
           <div class="modal is-active">
             <div class="modal-background"></div>
-            <div class="modal-content">
+            <div class="modal-content" style="width: 80%">
               <div class="box">{slot}</div>
             </div>
             <button

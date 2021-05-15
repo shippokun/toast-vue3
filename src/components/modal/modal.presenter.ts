@@ -1,7 +1,7 @@
-import { ref } from "vue";
+import { Ref, ref } from "vue";
 
-export const useModal = (isShow: boolean | undefined) => {
-  const show = ref<boolean>(isShow || false);
+export const useModal = (isShow: Ref<boolean> | undefined) => {
+  const show = isShow || ref(false);
   const toggle = () => {
     show.value = !show.value;
   };

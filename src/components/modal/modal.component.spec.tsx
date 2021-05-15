@@ -41,7 +41,7 @@ describe("modal", () => {
     const mockSlot = "test";
     mount(ModalComponent, {
       props: {
-        isShow: true,
+        isShow: ref(true),
       },
       attachTo: createContainer(),
       slots: {
