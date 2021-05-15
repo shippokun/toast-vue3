@@ -3,10 +3,11 @@
 exports[`todo.layout.tsx render 1`] = `
 <div class="container is-max-desktop">
   <section class="hero">
-    <div class="hero-body">
-      <h1 class="title has-text-centered">Todo-Vue</h1>
+    <div class="hero-body  has-text-centered">
+      <h1 class="title">Todo-Vue</h1><a>Show GithubCode for VSCodeModal</a>
     </div>
   </section>
   <router-view-stub></router-view-stub>
+  <v-s-code-stub isshow="[object Object]"></v-s-code-stub>
 </div>
 `;
