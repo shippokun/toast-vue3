@@ -1,8 +1,8 @@
 import { Module } from "vuex";
 
 import { RootState } from "../store";
-import { getters } from "./getters";
 import { actions } from "./actions";
+import { getters } from "./getters";
 import { mutations } from "./muitations";
 import { TodoState, initialState } from "./states";
 

@@ -1,6 +1,7 @@
 import { defineComponent, PropType, Ref, ref } from "vue";
-import { ModalComponent } from "@/components";
 import styled from "vue3-styled-components";
+
+import { ModalComponent } from "@/components";
 
 type Props = {
   isShow?: Ref<boolean>;

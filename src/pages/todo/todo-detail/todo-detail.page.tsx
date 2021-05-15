@@ -1,5 +1,5 @@
-import { defineComponent, ref } from "vue";
 import { useRoute } from "vue-router";
+import { defineComponent, ref } from "vue";
 
 import { TodoDetailContainer } from "./containers";
 

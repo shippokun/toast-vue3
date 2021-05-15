@@ -1,8 +1,10 @@
 import { mount } from "@vue/test-utils";
+
 import { createTodosMock } from "@/models/testing";
+import { router } from "@/router";
+
 import { TodoListComponent } from "./todo-list.component";
 // TODO: 他のコンポーネントも読み込んでしまうので、要修正
-import { router } from "@/router";
 
 describe("todo-list.component.tsx", () => {
   describe("renders", () => {

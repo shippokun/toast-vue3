@@ -1,8 +1,9 @@
-import { defineComponent, PropType, computed, ref } from "vue";
-import { Todo } from "@/models";
-import { formatDate } from "@/libs";
 import { RouterLink } from "vue-router";
+import { defineComponent, PropType, computed, ref } from "vue";
+
 import { ModalComponent } from "@/components";
+import { formatDate } from "@/libs";
+import { Todo } from "@/models";
 
 interface Props {
   todos: Todo[] | null;

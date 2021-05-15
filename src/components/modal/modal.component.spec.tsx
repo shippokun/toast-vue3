@@ -1,5 +1,6 @@
 import { mount } from "@vue/test-utils";
 import { ref } from "vue";
+
 import { ModalComponent } from "./modal.component";
 
 const createContainer = (tag = "div") => {

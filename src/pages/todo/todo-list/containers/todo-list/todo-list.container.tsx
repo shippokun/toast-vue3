@@ -1,7 +1,8 @@
-import { defineComponent, PropType } from "vue";
 import { useRouter } from "vue-router";
+import { defineComponent, PropType } from "vue";
 
 import { useTodoStore } from "@/store";
+
 import { TodoListComponent } from "../../components";
 
 interface Props {

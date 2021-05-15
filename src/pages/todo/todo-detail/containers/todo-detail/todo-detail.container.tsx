@@ -1,6 +1,6 @@
-import { defineComponent } from "vue";
-import { useToast } from "vue-toastification";
 import { useRouter } from "vue-router";
+import { useToast } from "vue-toastification";
+import { defineComponent } from "vue";
 
 import { useTodoStore } from "@/store";
 
@@ -22,7 +22,7 @@ export const TodoDetailContainer = defineComponent({
   setup(props: Props) {
     const router = useRouter();
     const toast = useToast();
-    const { todo, fetch, isFetching, todos, remove } = useTodoStore();
+    const { todo, fetch, remove } = useTodoStore();
 
     fetch({ id: props.todoId });
 

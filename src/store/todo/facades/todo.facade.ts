@@ -1,9 +1,10 @@
 import { computed } from "vue";
 import { useStore } from "vuex";
+
 import { Todo, TodoCreateDto, TodoUpdateDto } from "@/models";
 
-import * as getters from "../getters";
 import * as actions from "../actions";
+import * as getters from "../getters";
 import { featureKey } from "../states";
 
 // eslint-disable-next-line @typescript-eslint/explicit-module-boundary-types

@@ -1,5 +1,5 @@
-import { defineComponent, ref, watch } from "vue";
 import { LocationQuery, useRoute } from "vue-router";
+import { defineComponent, ref, watch } from "vue";
 
 import { TodoListContainer } from "./containers";
 

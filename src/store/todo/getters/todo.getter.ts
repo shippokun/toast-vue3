@@ -1,6 +1,7 @@
 import { GetterTree } from "vuex";
 
 import { Todo } from "@/models";
+
 import { RootState } from "../../store";
 import { TodoState } from "../states";
 

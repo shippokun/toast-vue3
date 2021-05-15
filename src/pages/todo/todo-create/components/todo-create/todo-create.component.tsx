@@ -1,8 +1,9 @@
+import { RouterLink } from "vue-router";
 import { defineComponent, computed, PropType } from "vue";
 
 import { TodoCreateDto } from "@/models";
+
 import { useTodoCreatePresenter } from "./todo-create.presenter";
-import { RouterLink } from "vue-router";
 
 interface Props {
   onCreate: (todo: TodoCreateDto) => void;

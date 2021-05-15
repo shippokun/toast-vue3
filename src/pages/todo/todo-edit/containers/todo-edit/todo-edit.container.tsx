@@ -1,8 +1,9 @@
-import { defineComponent } from "vue";
-import { useTodoStore } from "@/store";
-import { TodoUpdateDto } from "@/models";
-import { useToast } from "vue-toastification";
 import { useRouter } from "vue-router";
+import { useToast } from "vue-toastification";
+import { defineComponent } from "vue";
+
+import { TodoUpdateDto } from "@/models";
+import { useTodoStore } from "@/store";
 
 import { TodoEditComponent } from "../../components";
 

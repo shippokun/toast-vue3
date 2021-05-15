@@ -1,7 +1,9 @@
-import { defineComponent, PropType, computed } from "vue";
-import { Todo, TodoUpdateDto } from "@/models";
-import { useTodoEditPresenter } from "./todo-edit.presenter";
 import { RouterLink } from "vue-router";
+import { defineComponent, PropType, computed } from "vue";
+
+import { Todo, TodoUpdateDto } from "@/models";
+
+import { useTodoEditPresenter } from "./todo-edit.presenter";
 
 interface Props {
   todo: Todo | null;

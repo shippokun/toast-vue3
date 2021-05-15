@@ -1,5 +1,6 @@
-import { defineComponent, ref } from "vue";
 import { RouterView } from "vue-router";
+import { defineComponent, ref } from "vue";
+
 import { VSCode } from "@/components";
 
 export const TodoLayout = defineComponent({
