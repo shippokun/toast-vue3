@@ -25,6 +25,9 @@ Vue3 で Todo アプリを作成してみる。
   - frontend の framework に依存していない css framework を使ってみたかった
   - 使い勝手良さそうだったので選んだ
   - ここらへんのこだわりは特にない
+- [vite](https://github.com/vitejs/vite)
+  - 開発環境でならこれで決まり
+  - 爆速すぎて快適よ
 
 ## セットアップ
 
@@ -35,7 +38,8 @@ npm install
 ## 開発
 
 ```shell
-npm run start
+npm run start // vue cli ver
+npm run vite  // vite ver
 ```
 
 ## backend
